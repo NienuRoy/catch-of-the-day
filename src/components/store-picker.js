@@ -5,6 +5,7 @@ export default class StorePicker extends React.Component {
   goToStore(event) {
     event.preventDefault()
     const storeId = this.storeInput.value
+    this.context.router.transitionTo(`/store/${storeId}`)
   }
 
   // `this` in a component lifecycle method (like `render`) is bound to the
@@ -23,4 +24,8 @@ export default class StorePicker extends React.Component {
       </form>
     )
   }
+}
+
+StorePicker.contextTypes = {
+  router: React.PropTypes.object
 }
