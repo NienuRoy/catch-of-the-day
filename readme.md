@@ -1,49 +1,43 @@
-![](http://wes.io/dgAQ/content)
+# Catch of the Day
 
-# React For Beginners — [ReactForBeginners.com](https://ReactForBeginners.com)
+React application built following the incredible, recently updated tutorial
+created by Wes Bos. You can find the tutorial [here](react-for-beginners).
 
-Starter files for the React For Beginners course. Come <a href="https://ReactForBeginners.com/">Learn React</a> with me!
+Production site: https://catch-of-the-day-austin-wood.firebaseapp.com/
 
-The code in this repo meant to be a reference point for anyone following along with the video course.
+![application-screenshot](http://i.imgur.com/epdcSs3.jpg)
 
-## :point_right: :point_right: :point_right: :point_right:  To Start :point_left: :point_left: :point_left: :point_left:
+### Running Locally
 
-1. Rename the first folder to `catch-of-the-day`
-2. cd into `catch-of-the-day` and follow along with the videos
+Clone repository
 
-Each folder contains **only the changed files** for each video, so if you need any code, pull the appropriate file into your `catch-of-the-day` folder.
+```
+git clone git@github.com:indiesquidge/catch-of-the-day.git
+```
 
-You are welcome to submit Pull Requests but I'd like to keep the code as similar as possible to the course content.
+Download Dependencies
+```
+npm install
+```
 
-### Code Use
+Run locally
+```
+npm start
+```
 
-You are welcome to use this code in your own applications. If you would like to use it for training purposes, please shoot me a message first to make sure it's okay.
+### Extension/Transformation Ideas
 
+- [ ] try implementing a loading spinner to avoid rendering initial state where it looks like the user is logged out before a second render shows the proper inventory
+- [x] try using more native Firebase v3 code for auth handling (https://www.youtube.com/watch?v=iIcOohdSnMw)
+- [ ] try fixing initial state for order being "Sorry, fish is no longer available"
+      - this cannot done with `shouldComponentUpdate`, as `shouldComponentUpdate` is called *after* the initial render)
+      - instead, use the callback option that is part of the config object passed to rebase's `syncState` method
+- [x] try deploying to Firebase
+- [ ] try validating adding a fish with Firebase database rules
+- [ ] try creating our own `webpack.config.js` to compliment the `create-react-app` eject action
+- [ ] try using `Redirect` react-router component (https://www.youtube.com/watch?v=Vur2dAFZ4GE)
+- [ ] try building our own version of `react-dom` render (https://github.com/iamdustan/tiny-react-renderer)
+- [ ] try using uni-directional data flow when updating a fish form; two-directional is messy and prone to errors
+- [ ] try using all stateless, pure, functional React components (not sure if this is fully possible)
 
-# Frequently Asked Questions
-
-#### :question: Where are folders `2`, `3`, and `5`?
-Not all the videos have significant enough code changes to warrant an entire folder. Although you should be coding them all yourself, the code is available in the next video's folder.
-
-#### :question: I tried installing the Babel syntax highlighter but it didn't work!
-
-There are a few possible options:
-
-* If you are on Sublime Text 2, you should Upgrade to Sublime Text 3.
-* Some users have reported restarting works
-* You can try the [JavaScript Next](https://packagecontrol.io/packages/JavaScriptNext%20-%20ES6%20Syntax) syntax highlighter instead
-
-#### :question: I can't set Babel as the default syntax highlighter!
-
-Make sure you are in a file with the extension of `.js` before you do this step - you can't set the default for a file without having a file open!
-
-#### :question: I can't see the React tab in my dev tools
-
-Restart your dev tools or your chrome browser entirely. They will only show up when you are viewing a React app - so make sure you test it on Facebook or another website that is running React. It won't work on your empty `main.js` file until you `var React = require('react')` 
-
-#### :question: What Sublime Text Packages are you using? What Terminal Theme?
-
-* I've written indepth over at [WesBos.com/uses](http://wesbos.com/uses)
-* Theme + Colour Scheme → [Cobalt 2](https://packagecontrol.io/packages/Theme%20-%20Cobalt2)
-* JS Syntax Highlighting → [Babel](https://packagecontrol.io/packages/Babel)
-* HTML + CSS Shortcuts → [Emmet](https://packagecontrol.io/packages/Emmet) — You can [get emmet working with JSX here](http://wesbos.com/emmet-react-jsx-sublime/)
+[react-for-beginners]: https://reactforbeginners.com/
